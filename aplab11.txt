@@ -1,0 +1,11 @@
+#lang scheme
+
+(define (helper-func a sum)
+  (cond [(> a 0) (helper-func (- a 1) (+ sum a))] [else (display "The value of sum is: ") (display sum)]))
+
+(define (loop a) (helper-func (- a 1) 0))
+
+(define (theFunc a b)
+  (cond [(or (eq? a 0) (< a b)) (loop a)] [else (display "The value of sum is: ") (display (+ a b))]))
+
+(theFunc 2 4)
